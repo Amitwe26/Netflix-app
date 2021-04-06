@@ -1,0 +1,51 @@
+.user-modal {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    width: 160px;
+    // height: 250px;
+    padding: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.507);
+    border: 1px solid gray;
+    z-index: 5;
+    .user-name {
+        color: white;
+        text-decoration: none;
+        :hover {
+            text-decoration: underline;
+        }
+    }
+    .users-list-modal {
+        flex-grow: 1;
+        height: 120px;
+        .user {
+            margin: 3px 2px;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+        .img-users {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            margin-inline-end: 10px;
+        }
+    }
+    .bottom {
+        border-top: 1px solid gray;
+        padding-top: 5px;
+        margin-top: 10px;
+
+        a {
+            color: white;
+            margin: 4px 0;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+}

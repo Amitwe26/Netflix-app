@@ -1,0 +1,43 @@
+.row-container {
+    margin: 0 15px;
+    // max-height: 270px;
+    position: relative;
+    top: -120px;
+    p {
+        padding-inline-start: 30px;
+        color: #ffffff;
+    }
+    .row-movie {
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        width: 100%;
+        .lowerRow {
+            padding: 5px;
+            width: 245px;
+            transition: transform 450ms;
+            border-radius: 4px;
+            transition: 0.5s;
+            object-fit: contain;
+            &:hover {
+                transform: scale(1.04);
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+        .highRow {
+            max-height: 300px;
+            padding: 5px;
+            border-radius: 4px;
+            transition: 0.5s;
+            &:hover {
+                transform: scale(1.04);
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.row-movie::-webkit-scrollbar {
+    display: none;
+}

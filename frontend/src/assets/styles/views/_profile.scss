@@ -1,0 +1,74 @@
+.profile-page {
+    height: 100vh;
+    color: white;
+    background-color: #141414;
+    .btn-logout {
+        background-color: #d81f27;
+        border-radius: 7px;
+        padding: 5px 7px;
+        position: absolute;
+        right: 35px;
+        top: 16px;
+        font-size: 12px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        &:active {
+            background-color: #db0a14e0;
+        }
+    }
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    .main-profile {
+        text-align: center;
+        .main-users {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+            .user {
+                position: relative;
+                p {
+                    margin-block-start: 0;
+                }
+                img {
+                    width: 120px;
+                    height: 120px;
+                    margin: 20px;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+                .btn-edit {
+                    position: absolute;
+                    padding: 12px;
+                    background-color: rgba(255, 255, 255, 0.514);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 50px;
+                    border: 1px solid white;
+                    border-radius: 50%;
+                }
+            }
+        }
+        button {
+            border: 1px solid gray;
+            color: gray;
+            padding: 14px;
+            background-color: #141414;
+            &:hover {
+                color: white;
+                border: 1px solid white;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.nav-logo {
+    width: 100px;
+    height: 50px;
+    margin-inline-start: 30px;
+}

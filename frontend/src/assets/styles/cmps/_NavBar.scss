@@ -1,0 +1,62 @@
+.nav-bar {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 3;
+    transition: 0.5s;
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        .left-nav {
+            display: flex;
+            align-items: center;
+            a {
+                margin-inline-start: 25px;
+                font-size: 13px;
+                color: #ffffff;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .nav-logo {
+            width: 100px;
+            height: 50px;
+            margin-inline-start: 30px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .right-nav {
+            .filterMovies {
+                background-color: rgba(255, 255, 255, 0.267);
+                border: none;
+                border-radius: 3px;
+                border-bottom: 1px solid gray;
+            }
+            .user-avatar {
+                width: 35px;
+                height: 35px;
+                margin: 6px 20px;
+                border-radius: 10px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            span {
+                margin-inline-start: -13px;
+                margin-inline-end: 30px;
+                font-size: 10px;
+                color: white;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.nav-black {
+    background-color: rgb(14, 13, 13);
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+}

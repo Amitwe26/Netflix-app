@@ -1,0 +1,44 @@
+.modal-movie {
+    background-color: rgb(48, 48, 48);
+    position: fixed;
+    z-index: 5;
+    transform: translateX(-50%);
+    width: 350px;
+    // height: 50%;
+    left: 50vw;
+    top: 25vh;
+    box-shadow: 0px -3px 13px 5px #929292;
+    color: white;
+    .img-modal {
+        // margin: 0 auto;
+        width: 350px;
+        height: 200px;
+    }
+    .info {
+        padding: 7px;
+        .top {
+            .left-btn {
+                flex-grow: 1;
+            }
+            button {
+                padding: 7px 10px;
+                color: white;
+                background-color: rgb(48, 48, 48);
+                border-radius: 50%;
+                border: 1px solid gray;
+                margin: 5px;
+                &:hover {
+                    cursor: pointer;
+                    border: 1px solid white;
+                }
+            }
+        }
+        .bottom {
+            .over-view {
+                margin-block-start: 0;
+                max-height: 38px;
+                overflow-y: hidden;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+//base
+@import "basics/base";
+@import "basics/helpers";
+
+//views
+@import "views/home";
+@import "views/profile";
+@import "views/register";
+
+//cmps
+@import "cmps/NavBar";
+@import "cmps/Banner";
+@import "cmps/MovieList";
+@import "cmps/ModalMovie";
+@import "cmps/UsersModal";
