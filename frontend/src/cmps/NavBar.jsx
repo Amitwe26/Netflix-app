@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { storageService } from '../services/storageService'
 import { setFilter } from '../store/actions/MovieAction'
 // import { setFilter } from '../store/actions/MovieAction'
@@ -55,7 +55,7 @@ export function NavBar({ onChangeProfile }) {
     }
 
     const openModal = (profileId) => {
-        console.log('profileId is:', profileId);
+        // console.log('profileId is:', profileId);
         if (!profileId) {
             console.log('profilesFromStorge is:', profileFromStorge);
             const usersWithFilter = filterProfiles(profileFromStorge.id)
@@ -105,23 +105,26 @@ export function NavBar({ onChangeProfile }) {
                         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
                         alt=""
                     />
-                    <a > Home page</a>
-                    <a > TV shows </a>
-                    <a > Movies</a>
+                    <Link to={`/profile/${profile?.id || profileFromStorge?.id}`}> Home page</Link>
+                    <Link to={`/profile/${profile?.id || profileFromStorge?.id}/tv-show`}> TV shows </Link>
+                    <Link to={`/profile/${profile?.id || profileFromStorge?.id}/movies`}> Movies</Link>
                     <a > News & Popular</a>
-                    <a > My list</a>
+                    <Link to={`/profile/${profile?.id || profileFromStorge?.id}/my-list`}> My list</Link>
                 </div>
-                <div className="flex align-center right-nav" onClick={() => openModal(profile.id)}>
-                    <FilterMovie onSetFilter={onSetFilter} />
-                    <img
+                <div className=" right-nav" >
+                    {/* <FilterMovie onSetFilter={onSetFilter} /> */}
+                    <div className="flex align-center" onClick={() => openModal(profile.id)}>
 
-                        // onMouseEnter={() => setUsersModal(!usersModal)}
-                        // onMouseOut={() => toggleHoverMouse(false)}
-                        className="user-avatar"
-                        src={setAvatarPicture(profile?.color || profileFromStorge.color)}
-                        alt=""
-                    />
-                    <span onClick={() => setProfilesModal(!profilesModal)}>▼</span>
+                        <img
+
+                            // onMouseEnter={() => setUsersModal(!usersModal)}
+                            // onMouseOut={() => toggleHoverMouse(false)}
+                            className="user-avatar"
+                            src={setAvatarPicture(profile?.color || profileFromStorge?.color)}
+                            alt=""
+                        />
+                        <span onClick={() => setProfilesModal(!profilesModal)}>▼</span>
+                    </div>
 
                 </div>
                 {profilesModal && <UsersModal profiles={profilesWithFilter} setAvatarPicture={setAvatarPicture} changeProfile={changeProfile} />}

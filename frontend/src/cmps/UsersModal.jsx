@@ -15,15 +15,15 @@ export function UsersModal({ profiles, changeProfile, setAvatarPicture }) {
                         <img className="img-users" src={setAvatarPicture(profile.color)} alt="user-img" />
                         <Link to={`/profile/${profile.id}`}
                             className="user-name" >
-                            {profile.name}
+                            {profile?.name}
                         </Link>
                     </div>
                 })}
             </div>
             <div className="bottom flex col">
-                <Link>Account</Link>
-                <Link>Help</Link>
-                <Link>Logout from Netflix</Link>
+                <Link to="/user">Account</Link>
+                <Link to="">Help</Link>
+                <Link to="/" onClick={() => sessionStorage.clear()}>Logout from Netflix</Link>
             </div>
         </div>
     )

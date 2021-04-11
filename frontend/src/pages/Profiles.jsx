@@ -27,14 +27,12 @@ export function Profiles() {
         history.push(`/profile/${profile.id}`)
     }
 
-    function onLogout() {
-        sessionStorage.clear()
-        history.push('/')
-    }
+
 
     async function setNewProfile(ev) {
         ev.preventDefault()
         console.log('newProfile,userlOGIN is:', ev.target.name.value, userLogin);
+        // const loginUser
         const newProfile = {}
         newProfile.name = ev.target.name.value
         newProfile.color = ev.target.select.value
@@ -46,7 +44,6 @@ export function Profiles() {
     return (
         <div className="profile-page">
             <img className="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="" />
-            <button className="btn-logout" onClick={() => onLogout()}>Logout</button>
             <div className="main-profile">
                 <h1>How watch in Netflix?</h1>
                 <button onClick={() => setAddProfile(!addProfile)}>Add profile</button>

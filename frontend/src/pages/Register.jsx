@@ -46,18 +46,21 @@ export function Register() {
     const dosignIn = async ev => {
         ev.preventDefault()
         if (!email || !password) {
-            setMsg('you need username and password')
+            return setMsg('you need username and password')
         }
-        else {
-            try {
-                const netflixUser = { email, password }
-                const user = await dispatch(setNetflixUser(netflixUser))
-                if (user) history.push('/user')
-
-            } catch {
-                console.log(' we have problem to login');
+        try {
+            const netflixUser = { email, password }
+            console.log('netflixUser is:', netflixUser);
+            const user = await dispatch(setNetflixUser(netflixUser))
+            if (user) history.push('/user')
+            else {
+                setMsg('Username or Password is not ok :(')
             }
+
+        } catch {
+            console.log(' we have problem to login');
         }
+
     }
 
     const goToSignUp = ev => {
@@ -75,7 +78,7 @@ export function Register() {
         }
         try {
             dispatch(signup(newUser))
-            history.push('/user')
+
         }
         catch {
             console.log('failed to try sign up');

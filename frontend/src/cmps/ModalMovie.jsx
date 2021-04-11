@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 const BASE_URL_IMG = 'https://image.tmdb.org/t/p/original'
 
 export function ModalMovie({ movie, setOpenModal }) {
+    console.log('movie is:', movie);
     useEffect(() => {
         window.addEventListener('scroll', closeModal)
         return () => window.removeEventListener('scroll', closeModal)
@@ -37,6 +38,7 @@ export function ModalMovie({ movie, setOpenModal }) {
                     <h2>{movie.title || movie.name}</h2>
                     <p className="over-view">{movie.overview}</p>
                     <p>{movie.release_date || movie.first_air_date}</p>
+                    <p>{movie.media_type}</p>
                 </div>
             </div>
         </div>

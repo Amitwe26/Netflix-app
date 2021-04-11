@@ -15,7 +15,7 @@ const requests = [
     { title: 'Top Rated', url: `/movie/top_rated?api_key=${API_KEY}&language=en-US` },
     { title: 'Action Movies', url: `/discover/movie?api_key=${API_KEY}&with_genres=28` },
     { title: 'Netflix Originals', url: `/discover/tv?api_key=${API_KEY}&with_networks=213` },
-    { title: 'Most popular ', url: `/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc` },
+    { title: 'Most popular ', url: `/discover/tv?api_key=${API_KEY}&sort_by=popularity.desc` },
     { title: 'Comedy Movies', url: `/discover/movie?api_key=${API_KEY}&with_genres=35` },
     { title: 'Documentaries', url: `/discover/movie?api_key=${API_KEY}&with_genres=99` },
     { title: 'Horror Movies', url: `/discover/movie?api_key=${API_KEY}&with_genres=27` },
@@ -24,7 +24,7 @@ const requests = [
 ]
 
 
-async function query() {
+async function queryMoviesToBanner() {
     const moviesToBanner = storageService.loadFromStorage(KEY_WORD)
     if (!moviesToBanner) {
         try {
@@ -71,7 +71,8 @@ function _loadMovies() {
 }
 
 export const moveiService = {
-    query,
+    queryMoviesToBanner,
     getMovies,
-    getRequests
+    getRequests,
+    _loadMovies
 }

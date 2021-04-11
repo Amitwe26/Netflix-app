@@ -21,6 +21,7 @@ async function signup(userCred) {
 }
 
 async function addProfile(newProfile, userLogin) {
+    // const loggedinUser = JSON.parse(userLogin)
     newProfile.id = _makeId()
     newProfile.movies = []
     userLogin.profiles.push(newProfile)

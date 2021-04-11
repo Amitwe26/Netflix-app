@@ -9,7 +9,7 @@ export function Banner() {
     }, [])
 
     async function getBannerImg() {
-        const resulte = await moveiService.query()
+        const resulte = await moveiService.queryMoviesToBanner()
         const num = Math.floor(Math.random() * (49 - 0) + 0)
         const movieToBanner = resulte.items[num]
         setmovie(movieToBanner)
